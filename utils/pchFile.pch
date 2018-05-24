@@ -1,0 +1,73 @@
+//
+//  PrefixHeader.pch
+//  HuBeiBusiness
+//
+//  Created by 秦田新 on 2017/4/19.
+//  Copyright © 2017年 秦田新. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#define TXNotificationCenter [NSNotificationCenter defaultCenter]
+
+#define isPhone5 (g_screenWidth < 375)
+#define isPhone6 (g_screenWidth < 414)
+#define isPhone5Font isPhone5 ? [UIFont systemFontOfSize:12] : [UIFont systemFontOfSize:14]
+
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+#define ARGBCOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+#define FONT(a)  [UIFont systemFontOfSize:a]
+#define BFONT(a) [UIFont boldSystemFontOfSize:a]
+
+#define kPaddingColor  RGBCOLOR(220,220,220)   //分割线
+#define kMainTextColor RGBCOLOR(40,40,40)
+#define kDescColor RGBCOLOR(121,121,121)
+#define kMainBlueColor RGBCOLOR(69, 183, 250)//RGBCOLOR(40, 172, 252)
+#define kBgColor RGBCOLOR(241, 241, 241)
+
+/***   字体   */
+#define PFR @"PingFangSC-Regular"
+
+#define  Iphone6ScaleWidth  [UIScreen mainScreen].bounds.size.width/375
+#define  Iphone6ScaleHeight [UIScreen mainScreen].bounds.size.height/667
+
+//MQTT
+#define kService [NSBundle mainBundle].bundleIdentifier
+#define KAccount @"HUBEISHEBEIUUID"
+
+#define HBNotificationCenter [NSNotificationCenter defaultCenter]
+#define IOS8 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 ? YES : NO)
+
+#define HBScreenW [UIScreen mainScreen].bounds.size.width
+#define HBScreenH [UIScreen mainScreen].bounds.size.height
+#define NAV_BAR_HEIGHT 64
+
+#ifdef DEBUG
+#define SLog(format, ...) printf("class: <%p %s:(%d) > method: %s \n%s\n", self, [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __PRETTY_FUNCTION__, [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] )
+#else
+#define SLog(format, ...)
+#endif
+
+
+
+//#import "ToolKit.h"
+//#import "HBHttpTool.h"
+//#import "SVProgressHUD+HB.h"
+//#import "UIImageView+WebCache.h"
+//#import "MJExtension.h"
+//#import "SDAutoLayout.h"
+//#import "UIView+HBExtension.h"
+//
+//#import "HBUserFileManager.h"
+////通知消息存储
+//#import "HBUserMessSql.h"
+//#import "XMGStatusBarHUD.h"
+
+/***   文件服务器，正式环境   */
+#define KfilePath @"http://service.loveonline.net.cn:9090"
+
+#import "UIView+XMGExtension.h"
+#import "HBConst.h"
+#endif
